@@ -1,0 +1,19 @@
+=== THIS IS A CONTROLLED EDUCATIONAL SIMULATION ===
+
+This folder has been encrypted as part of a cybersecurity training exercise.
+No real harm has been done and no payment is required or possible.
+
+What happened:
+- Files were encrypted using AES (via Fernet)
+- A dummy user account was created
+- This note was dropped
+
+How to recover (for demonstration):
+1. Find the encryption key (in this simulation: visible in console / memory forensics)
+2. Run the recover.py script with the key
+3. Use cleanup.py to remove the dummy user
+
+Instructor/Student note: This is NOT real ransomware.
+Purpose: Learn encryption, forensics, recovery, and defense.
+
+Simulation project by:
