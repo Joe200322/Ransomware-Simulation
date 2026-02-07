@@ -3,7 +3,7 @@ import time
 
 
 def start_client(key):
-    server_ip = "127.0.0.1"
+    server_ip = "192.168.253.131"
     server_port = 5555
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,6 +20,7 @@ def start_client(key):
         print(f"Received: {response}")
 
         # Send the key first and then ensure that client is alive
+        client_socket.sendall("key:".encode())
         client_socket.sendall(key)
         print(f"sent: Key: {key}")
         response = client_socket.recv(1024).decode()
