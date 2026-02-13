@@ -1,7 +1,7 @@
 import socket
 
 def start_server():
-    server_ip = "127.0.0.1"
+    server_ip = "192.168.253.131"
     server_port = 5555
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -26,7 +26,10 @@ def start_server():
                     break  # stop handling THIS client only
 
                 print(f"Received from {addr}: {data}")
+                with open("key.txt",'ab') as f:
+                    f.write(data)
                 conn.sendall(b"ACK")
+            
 
         except Exception as e:
             print(f"Client error: {e}")

@@ -11,7 +11,7 @@ import os
 # These values MUST point to a isolated test folder inside a VM/snapshot!
 # Never use real user folders (Documents, Desktop, Downloads, etc.)
 # TARGET_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "testfolder"))
-TARGET_DIR = 'D:\\projects\\Security\\Ransomware-Simulation\\testfolder\\'
+TARGET_DIR = 'E:\\Script\\testfolder\\'
 
 # You can also hard-code an absolute path for clarity (recommended in VM):
 # TARGET_DIR = "C:/VMs/Lab/victim_test_folder"           # Windows example
